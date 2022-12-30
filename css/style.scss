@@ -98,20 +98,33 @@ main{
                 transition: 300ms;
                 text-align: left;
                 padding: .5em;
+                height: 50px;
                 input{
                     border: none;
+                    z-index: 100;
+                    background-color: transparent;
+                    font-size: 1.2rem;
+                    margin-top: 1em;
+                }
+                input:focus-within{
+                    outline: none;
                 }
                 span{
                     color: grey;
                     font-size: 100%;
+                    transition: 300ms;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    position: absolute;
+                    margin-top: 0px;
                 }
             }
 
-            .input:hover{
-                grid-template-rows:20px 30px;
+            .input:focus-within,span:focus-within{
+                grid-template-rows:0px 40px;
                 span{
-                    font-weight: 600;
                     font-size: .6rem;
+                    margin-top: -30px;
                 }
             }
             .input:focus-within{

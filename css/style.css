@@ -93,27 +93,40 @@ main .block1 .mainflex .input {
   border: 1px solid white;
   background-color: white;
   display: grid;
-  grid-template-rows: 50px 0px;
+  grid-template-rows: 40px 0px;
   overflow: hidden;
   justify-content: center;
   align-items: center;
   transition: 300ms;
   text-align: left;
-  padding: 1em;
+  padding: 0.5em;
+  height: 50px;
 }
 main .block1 .mainflex .input input {
   border: none;
+  z-index: 100;
+  background-color: transparent;
+  font-size: 1.2rem;
+  margin-top: 1em;
+}
+main .block1 .mainflex .input input:focus-within {
+  outline: none;
 }
 main .block1 .mainflex .input span {
   color: grey;
   font-size: 100%;
-}
-main .block1 .mainflex .input:hover {
-  grid-template-rows: 20px 30px;
-}
-main .block1 .mainflex .input:hover span {
+  transition: 300ms;
+  font-size: 1rem;
   font-weight: 600;
+  position: absolute;
+  margin-top: 0px;
+}
+main .block1 .mainflex .input:focus-within, main .block1 .mainflex span:focus-within {
+  grid-template-rows: 0px 40px;
+}
+main .block1 .mainflex .input:focus-within span, main .block1 .mainflex span:focus-within span {
   font-size: 0.6rem;
+  margin-top: -30px;
 }
 main .block1 .mainflex .input:focus-within {
   grid-template-rows: 20px 30px;
