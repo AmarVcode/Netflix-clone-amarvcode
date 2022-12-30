@@ -1,52 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix  India - Amarvcode</title>
+    <title>Netflix India - Amarvcode</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAaVBMVEUAAACxBg/lCRRQAwa1Bg+XBQ3qCRSsBg/ZCBOpBg8rAQQfAQOkBQ+mBg7iCRSdBQ59BAyLBA1XAwiDBAySBA5rBArGCBG/BxHRCBL0CRUTAQFIAwc4AgVBAgZeAwgvAQRyBAomAAQZAQL70WzNAAADXklEQVRoge3a4W7iMBAE4JhmY3w4OMYmCdAC5f0f8kxor00mp+okPNJJ2b+N9NUT2LVDimKppZZaaqmlllrqXsfLr0m9jy+4baZ1fCK/W0+rH1/gTT0uc3oif9quJnXYjS6QUo2rfHki/9JN+UozeQXL396IvO5h+Xsir8pqypdEvrSY/iuTbyH9hshrA+m3RF4Jpv9G5B2m74m8EUj/W+PNzisP6VdffT0/Lx0sX4i8lenqV2sib8J6yh/+pJ+fVxEbryHyDr/66w2Ptx7G3uHM403UkL7i8Voipn/h8c5j473SeGWjhfQ7Hm8kQOfZXmi8duFvm46oCLz17i9jj8GrWhocexcan9LHsReJvHfw4RvSj1oT+Fpmxt59w+1ZPI49x+Lv6eOmo9/cD9gTPw9vY8DTXjprh9ow+NT41NymI9iawCvjvIf01+8Dr/Pz2s2lvy8aZw2DtxLwtFcSeR+m/Gp7vIqzDN642GD6171Mlp+HVyalX+Om4xzFMfghfRx7Vy+uZvB1Sr+F5esQ083X+XnjJFj46vfBy+jmZ+Pv6cPYq7yPo/Qz8Y/0cdNRTtLPyEuYOWtP0s/Gz6e/kvFnPxuvber7uOnomsjgh5vvPTTeSfr5+CF9aLwrmz58DH5IH8/a7Sj9bPwj/SuOvXv6DD41vnjGr34dojUM3jrZ4/L75tvNz8enqefkesSxF/zXniMnn5bfFDOP2YLw+D2mn756DF7XNhTv2Hi9dyY/rwa+wB2vCvL52cvKmzrxu7n0LYPXxhfFBhuveEfgk3//IQUf9JRBPvougX89TFe/5vBKD090erj7zlsGrx4PlHDTERyPv+DYa6Sm8Zh+9Zk+hW9g+e1H+nn58vEb2gXG3io1Phpf4KbDRsvjcdPRPhofh7/A2NtG4fEFPmbT0fD4MzTe3lsev8H0xfH4mU1HGYn8aWbsGR5fzJy1LZHHlyo6IfInHHte8/iZsZfaPo/HRw2tI/Jv+EKREPkCH3IaTeRnNh2WyL9i+kx+5qxdKiI/c9bWRP6G6edaffkoN/q7rh715XfP5T9LWSc+NNfz6O8nJ65WXdtvq+ow/CPbp76lXCfz/PJ2+/HN6+PmtG+s6vrdT1f+Qx1vP18zrqe+Ir7UUksttdRSS/3P9Rss/0MMihDiMQAAAABJRU5ErkJggg==" type="image/x-icon">
+    <link rel="shortcut icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAaVBMVEUAAACxBg/lCRRQAwa1Bg+XBQ3qCRSsBg/ZCBOpBg8rAQQfAQOkBQ+mBg7iCRSdBQ59BAyLBA1XAwiDBAySBA5rBArGCBG/BxHRCBL0CRUTAQFIAwc4AgVBAgZeAwgvAQRyBAomAAQZAQL70WzNAAADXklEQVRoge3a4W7iMBAE4JhmY3w4OMYmCdAC5f0f8kxor00mp+okPNJJ2b+N9NUT2LVDimKppZZaaqmlllrqXsfLr0m9jy+4baZ1fCK/W0+rH1/gTT0uc3oif9quJnXYjS6QUo2rfHki/9JN+UozeQXL396IvO5h+Xsir8pqypdEvrSY/iuTbyH9hshrA+m3RF4Jpv9G5B2m74m8EUj/W+PNzisP6VdffT0/Lx0sX4i8lenqV2sib8J6yh/+pJ+fVxEbryHyDr/66w2Ptx7G3uHM403UkL7i8Voipn/h8c5j473SeGWjhfQ7Hm8kQOfZXmi8duFvm46oCLz17i9jj8GrWhocexcan9LHsReJvHfw4RvSj1oT+Fpmxt59w+1ZPI49x+Lv6eOmo9/cD9gTPw9vY8DTXjprh9ow+NT41NymI9iawCvjvIf01+8Dr/Pz2s2lvy8aZw2DtxLwtFcSeR+m/Gp7vIqzDN642GD6171Mlp+HVyalX+Om4xzFMfghfRx7Vy+uZvB1Sr+F5esQ083X+XnjJFj46vfBy+jmZ+Pv6cPYq7yPo/Qz8Y/0cdNRTtLPyEuYOWtP0s/Gz6e/kvFnPxuvber7uOnomsjgh5vvPTTeSfr5+CF9aLwrmz58DH5IH8/a7Sj9bPwj/SuOvXv6DD41vnjGr34dojUM3jrZ4/L75tvNz8enqefkesSxF/zXniMnn5bfFDOP2YLw+D2mn756DF7XNhTv2Hi9dyY/rwa+wB2vCvL52cvKmzrxu7n0LYPXxhfFBhuveEfgk3//IQUf9JRBPvougX89TFe/5vBKD090erj7zlsGrx4PlHDTERyPv+DYa6Sm8Zh+9Zk+hW9g+e1H+nn58vEb2gXG3io1Phpf4KbDRsvjcdPRPhofh7/A2NtG4fEFPmbT0fD4MzTe3lsev8H0xfH4mU1HGYn8aWbsGR5fzJy1LZHHlyo6IfInHHte8/iZsZfaPo/HRw2tI/Jv+EKREPkCH3IaTeRnNh2WyL9i+kx+5qxdKiI/c9bWRP6G6edaffkoN/q7rh715XfP5T9LWSc+NNfz6O8nJ65WXdtvq+ow/CPbp76lXCfz/PJ2+/HN6+PmtG+s6vrdT1f+Qx1vP18zrqe+Ir7UUksttdRSS/3P9Rss/0MMihDiMQAAAABJRU5ErkJggg=="
+        type="image/x-icon">
 </head>
+
 <body>
     <div class="absolutebg">
-    <img src="https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/fbb54774-ca17-4208-a995-db44bffe4163/IN-en-20221219-popsignuptwoweeks-perspective_alpha_website_small.jpg" srcset="https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/fbb54774-ca17-4208-a995-db44bffe4163/IN-en-20221219-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/fbb54774-ca17-4208-a995-db44bffe4163/IN-en-20221219-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/fbb54774-ca17-4208-a995-db44bffe4163/IN-en-20221219-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="">
-</div>
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/fbb54774-ca17-4208-a995-db44bffe4163/IN-en-20221219-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+            srcset="https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/fbb54774-ca17-4208-a995-db44bffe4163/IN-en-20221219-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/fbb54774-ca17-4208-a995-db44bffe4163/IN-en-20221219-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/5e48e7b6-350d-48d9-96d6-de8ca173c89f/fbb54774-ca17-4208-a995-db44bffe4163/IN-en-20221219-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+            alt="">
+    </div>
 
-<header>
-    <div><svg viewBox="0 0 111 30" data-uia="netflix-logo" class="svg-icon svg-icon-netflix-logo" aria-hidden="true" focusable="false"><g id="netflix-logo"><path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z" id="Fill-14"></path></g></svg></div>
-    <div class="nav-flex">
-        
+    <header>
+        <div><svg viewBox="0 0 111 30" data-uia="netflix-logo" class="svg-icon svg-icon-netflix-logo" aria-hidden="true"
+                focusable="false">
+                <g id="netflix-logo">
+                    <path
+                        d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z"
+                        id="Fill-14"></path>
+                </g>
+            </svg></div>
+        <div class="nav-flex">
+
             <select name="Lang" id="language">
                 <option value="English">English</option>
                 <option value="Hindi">Hindi</option>
             </select>
-    
-        <a href="#">Sign In</a>
-    </div>
-</header>
 
-<main>
-    <div class="block1">
-        <h1>
-            Unlimited movies, TV<br> shows and more.
-        </h1>
-        <h3>
-            Watch anywhere. Cancel anytime.
-        </h3>
-        <p>
-            Ready to watch? Enter your email to create or restart your membership.
-        </p>
-        <div class="mainflex">
-            <div class="input" role="button">
-                <span role="button">Email address</span>
-                <input type="text">
-            </div>
-            <button>Get Started</button>
+            <a href="#">Sign In</a>
         </div>
-    </div>
-</main>
+    </header>
 
+    <main>
+        <div class="block1">
+            <h1>
+                Unlimited movies, TV<br> shows and more.
+            </h1>
+            <h3>
+                Watch anywhere. Cancel anytime.
+            </h3>
+            <p>
+                Ready to watch? Enter your email to create or restart your membership.
+            </p>
+            <div class="mainflex">
+                <form>
+                    <div class="input" role="button">
+                    <span role="button">Email address</span>
+                    <input type="email">
+                </div>
+                <button>Get Started</button>
+                </form>
+                
+            </div>
+        </div>
+    </main>
+    <main>
+        <div class="box2">
+            <div>
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
+                    alt="">
+            </div>
+            <div>
+                <h1>
+                    Download your shows to watch offline.
+                </h1>
+                <h3>
+                    Save your favourites easily and always have something to watch.
+                </h3>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <main>
+        <div class="box2">
+
+            <div>
+                <h1>
+                    Watch everywhere.
+                </h1>
+                <h3>
+                    Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.
+                </h3>
+            </div>
+            <div>
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
+                    alt="">
+            </div>
+        </div>
+    </main>
+    <hr>
+    <main>
+        <div class="box2">
+            <div>
+                <img src="https://occ-0-6245-2186.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABYjXrxZKtrzxQRVQNn2aIByoomnlbXmJ-uBy7du8a5Si3xqIsgerTlwJZG1vMpqer2kvcILy0UJQnjfRUQ5cEr7gQlYqXfxUg7bz.png?r=420"
+                    alt="">
+            </div>
+            <div>
+                <h1>
+                    Create profiles for children.
+                </h1>
+                <h3>
+                    Send children on adventures with their favourite characters in a space made just for them—free with
+                    your membership.
+                </h3>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <main>
+        <h1 class="big">
+            Frequently Asked Questions
+        </h1>
+
+        <div class="question">
+            <div id="q1" class="qn" onclick="showdata('q1')">
+                <div>
+                    <div>What is Netflix?</div>
+                    <div class="add">+</div>
+                </div>
+                <div>
+                    <p>
+                        Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies,
+                        anime, documentaries and more – on thousands of internet-connected devices.
+                    </p>
+                    <p>
+                        You can watch as much as you want, whenever you want, without a single ad – all for one low
+                        monthly price. There's always something new to discover, and new TV shows and movies are added
+                        every week!
+                    </p>
+                </div>
+            </div>
+            <div id="q2" class="qn" onclick="showdata('q2')">
+                <div>
+                    <div>How much does Netflix cost?</div>
+                    <div class="add">+</div>
+                </div>
+                <div>
+                    <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one
+                        fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.</p>
+                </div>
+            </div>
+            <div id="q3" class="qn" onclick="showdata('q3')">
+                <div>
+                    <div>Where can I watch?</div>
+                    <div class="add">+</div>
+                </div>
+                <div>
+                    <p>
+                        Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at
+                        netflix.com from your personal computer or on any internet-connected device that offers the
+                        Netflix app, including smart TVs, smartphones, tablets, streaming media players and game
+                        consoles.
+                    </p>
+                    <p>
+                        You can also download your favourite shows with the iOS, Android, or Windows 10 app. Use
+                        downloads to watch while you're on the go and without an internet connection. Take Netflix with
+                        you anywhere.
+                    </p>
+                </div>
+            </div>
+            <div id="q4" class="qn" onclick="showdata('q4')">
+                <div>
+                    <div>How do I Cancel?</div>
+                    <div class="add">+</div>
+                </div>
+                <div>
+                    <p>
+
+                        Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel
+                        your
+                        account online in two clicks. There are no cancellation fees – start or stop your account
+                        anytime.
+                    </p>
+
+                </div>
+            </div>
+            <div id="q5" class="qn" onclick="showdata('q5')">
+                <div>
+                    <div>How can I watch on Netflix?</div>
+                    <div class="add">+</div>
+                </div>
+                <div>
+                    <p>
+                        Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning
+                        Netflix originals, and more. Watch as much as you want, anytime you want.
+                    </p>
+                </div>
+            </div>
+            <div id="q6" class="qn" onclick="showdata('q6')">
+                <div>
+                    <div>Is Netflix good for kids?</div>
+                    <div class="add">+</div>
+                </div>
+                <div>
+                    <p>The Netflix Kids experience is included in your membership to give parents control while kids
+                        enjoy family-friendly TV shows and films in their own space.</p>
+                    <p>
+                        Kids profiles come with PIN-protected parental controls that let you restrict the maturity
+                        rating of content kids can watch and block specific titles you don’t want kids to see.
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </main>
+    <main>
+        <div class="block2">
+
+            <p>
+                Ready to watch? Enter your email to create or restart your membership.
+            </p>
+            <div class="mainflex">
+                <form action="">
+                    <div class="input" role="button">
+                    <span role="button">Email address</span>
+                    <input type="email">
+                </div>
+                <button>Get Started</button>
+                </form>
+                
+            </div>
+        </div>
+    </main>
+    <hr>
+
+
+    <footer>
+        <div>
+
+            <h2>
+                Questions? Call 000-800-919-1694
+            </h2>
+        </div>
+
+
+
+        <div>
+            <a href="#">FAQ</a>
+            <a href="#">Help Centre</a>
+            <a href="#">Account</a>
+            <a href="#">Media Centre</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Jobs</a>
+            <a href="#">Ways to Watch</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy</a>
+            <a href="#">Cookie Perferences</a>
+            <a href="#">Corporate Information</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Speed test</a>
+            <a href="#">Legal Notices</a>
+            <a href="#">Only on Netflix</a>
+
+        </div>
+
+
+
+
+        <div>
+            <select name="Lang" id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+            </select>
+<a href="#">Netflix India</a>
+        </div>
+    </footer>
     <script src="/main.js"></script>
 </body>
+
 </html>
